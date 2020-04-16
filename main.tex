@@ -1,0 +1,159 @@
+\documentclass{utfpr-pg}
+
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{lipsum}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage{color,soul}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+\usepackage{quoting}
+\usepackage{tocloft}
+\usepackage{xspace}
+
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+%\usepackage{tocloft,titletoc}
+
+%\titlecontents{chapter}[1.8cm]{}{\bfseries\contentslabel{2.5cm}\MakeUppercase}{\hspace*{-1.5cm}}{\bfseries\titlerule*{}\contentspage}
+
+\cftsetindents{section}{0em}{1.2cm}
+\cftsetindents{subsection}{0em}{0.85cm}
+\cftsetindents{subsubsection}{0cm}{0.65cm}
+\cftsetindents{chapter}{0pt}{1.7cm}
+
+\makeatletter
+\renewcommand*\l@chapter{\@dottedtocline{0}{0em}{1.5cm}}
+
+\makeatother
+
+\usepackage[font=small,labelfont=bf]{caption}
+
+
+\graphicspath{{imagens/}}
+
+\DeclareFloatingEnvironment[
+fileext=lod,
+listname=Lista de Definições,
+name=Definição,
+placement=tbhp,
+]{definicao}
+
+
+\curso{ }
+\autor{ Edimar Calebe Castanho  \\ Gabriel Chaves Borges }
+\titulo{Sistema de Monitoramento de Apnéia}
+
+\local{Curitiba}
+\data{2020}
+
+\orientador{Luiz Bordignon}
+
+\preambulo{Monografia apresentada ao curso de graduação em Engenharia da Computação da Universidade Positivo, como requisito parcial para obtenção do grau de Engenheiro de Computação.\break}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     pagebackref=true,
+    pdftitle={\@title},
+    pdfauthor={\@author},
+    pdfsubject={\imprimirpreambulo},
+    pdfcreator={LaTeX with abnTeX2},
+    colorlinks=false,
+}
+\makeatother
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.1cm}  % tente também \onelineskip
+
+\makeindex
+
+\begin{document}
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing
+
+\imprimircapa
+\imprimirfolhaderosto
+
+
+
+%\includepdf[pages=-]{images/termo.pdf}
+
+%\begin{agradecimentos}
+   % A todos os familiares e amigos, que estiveram presentes em todos os momentos, sendo base e apoio para o sucesso de toda a trajetória acadêmica.
+    
+    %A todos os professores da instituição que se disponibilizaram a nos dar suporte em diferentes ramos, além de todo o incentivo e a colaboração sobre diversos assuntos.
+  
+    %À Universidade Positivo, por toda a infraestrutura proporcionada e pelo incentivo constante ao nosso desenvolvimento acadêmico e profissional.
+    
+    %Por último e não menos importante, a Deus, por nos ter tornado quem somos hoje, por todas as suas bençãos, luz e sabedoria que nos ofereceu para que chegássemos até esse dia.
+%\end{agradecimentos}
+ 
+%  \begin{resumo}
+ 
+ \refthis{bibli}
+% O Anjo da Guarda é um sistema destinado a motociclistas voltado às atividades profissionais do dia-a-dia do entregador. Sua função é reduzir o tempo de resposta em caso de acidentes, notificando outros motociclistas próximos possibilitando a eles auxiliar o acidentado. Além de disponibilizar relatórios que indiquem as áreas mais perigosas e associação climática aos acidentes ocorridos.
+
+% A rápida resposta aos primeiros socorros e início do tratamento especializado em caso de acidentes é um fator determinante para a sobrevivência e redução de sequelas, principalmente quanto às vítimas de acidentes de trânsito onde 35\% das fatalidades ocorrem entre 1 a 4 horas após o acidente. Apenas em 2018 houve um crescimento de 17,7\% em relação a 2017 nos acidentes de trânsito sofridos por motociclistas. Este aumento é reflexo do crescimento no setor conforme o surgimento e popularização de aplicativos de entrega.
+
+% O sistema é composto por um aplicativo Android, sistema embarcado e servidor em nuvem. Os três combinados são responsáveis por identificar o acidente do motociclista e avisar outros usuários que estejam próximos ao local. Tanto o sistema embarcado quanto o aplicativo utilizam de giroscópio e acelerômetro para determinar a ocorrência de um acidente sofrido pelo motociclista utilizador.
+
+%\textbf{Palavras-chaves}:  Acidente de moto, Sistema Embarcado, Acelerômetro, Giroscópio, Android
+ 
+ %\end{resumo}
+ 
+ 
+% \begin{resumo}[Abstract]
+% \refthis[en]{bibli}
+
+% The Guardian Angel is a system intended for motorcyclists focused on the day-to-day professional activities of the delivery man. Its function is to reduce the response time in case of accidents, by notifying other nearby motorcyclists enabling the injured to be assisted, as well as providing reports that indicate the most dangerous areas and climatic association with the accidents occurred.
+
+% The rapid  first aid and the beginning of specialized accident treatment is a determining factor for survival and reduction of sequelae, especially for traffic accident victims, where 35\% of fatalities occur within 1 to 4 hours after the accident. Only in 2018 there was a growth of 17.7\% compared to 2017 in traffic accidents suffered by motorcyclists. This increase reflects the growth in the sector as the emergence and popularization of delivery apps.
+
+% The system consists of an Android application, embedded system and cloud server, the three combined are responsible for identifying the rider's accident and warning other users who are nearby. Both the embedded system and the application use gyroscope and accelerometer to determine the occurrence of an accident suffered by the user rider.
+
+% \textbf{Key-Words}: Motorcycle Accident,  Embedded system, Accelerometer, Gyroscope, Android
+ 
+ 
+ %\end{resumo}
+
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\clearpage
+%\listoftables*
+
+\cleardoublepage
+
+ %\pdfbookmark[0]{\listtablename}{lot}
+ %\listoftables*
+ %\cleardoublepage
+
+\pdfbookmark[0]{\contentsname}{toc}
+
+\tableofcontents*
+
+\cleardoublepage
+
+\textual
+\pagestyle{simple}
+
+\captionsetup{singlelinecheck = false, justification=raggedright, labelsep=space}
+
+\input{Cap1.tex}
+\input{Cap2.tex}
+% \input{Textos/Cap3.tex}
+% \input{Textos/Cap4.tex}
+% \input{Textos/Cap5.tex}
+\clearpage
+\addcontentsline{toc}{chapter}{REFÊRENCIAS}
+
+\bibliography{biblio.bib}
+
+\newpage
+
+\end{document}
