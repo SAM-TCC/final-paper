@@ -1,6 +1,6 @@
 \chapter{Revisão Bibliográfica } \label{cap:rev}
 
-\section{Fundamentação teórica} 
+\section{Fundamentação teórica}
 
 \subsection{Apneia do sono}
 
@@ -11,7 +11,7 @@
 Existem várias tecnologias disponíveis para a medição do fluxo de ar, porém os princípios mais utilizados para este tipo de medição é por diferencial de temperatura ou por deslocamento mecânico. Os sensores baseados em diferencial de temperatura medem a queda de temperatura sofrida pela ação do fluxo de ar, alguns exemplos de implementação podem ser observados na Figura 2. Já os sensores mecânicos trabalham com ventoinhas ou comportas atreladas a potenciômetros que se movem de acordo com a intensidade do fluxo de ar. (IDA, 2020)
 
 \begin{figure}[H]
-\caption{Exemplos de implementação de sensores de fluxo de ar por diferença térmica}
+  \caption{Exemplos de implementação de sensores de fluxo de ar por diferença térmica}
   \includegraphics[width=\textwidth]{figuras/airflow.PNG}
   \floatfoot{(a) demonstra um sensor exposto ao fluxo de ar e outro escondido, (b) demonstra dois sensores no mesmo fluxo, mas o segundo fica protegido pelo primeiro que já aqueceu o fluxo de ar anteriormente, (c) demonstra uma implementação de um sensor com quatro termístores. (IDA, 2020}
 \end{figure}
@@ -23,7 +23,7 @@ O oxímetro é um sensor óptico que mede a oxigenação sanguínea comparando a
 O oxímetro emite ondas eletromagnéticas com diversas frequências dentro do espectro de aproximadamente 400 a 1000nm de comprimento de onda, estas ondas são normalmente aplicadas nas pontas dos dedos, pulso ou ouvido. As células sanguíneas atingidas absorvem este espectro de acordo com a sua taxa de oxigenação devolvendo ao sensor óptico o restante. Ao analisar este sinal que retorna ao dispositivo é possível inferir o nível de oxigenação sanguínea. (MOYLE, 2002)
 
 \begin{figure}[H]
-\caption{Espectro de absorção de sangue oxigenado (HbO2) e deoxigenado (Hb)}
+  \caption{Espectro de absorção de sangue oxigenado (HbO2) e deoxigenado (Hb)}
   \includegraphics[width=\textwidth]{figuras/Oximetria.PNG}
 \end{figure}
 
@@ -31,39 +31,59 @@ O oxímetro emite ondas eletromagnéticas com diversas frequências dentro do es
 
 \section{Trabalhos correlatos}
 
-\subsection{Aquisição de parâmetros de sono e armazenamento}
+\subsection{Um novo sistema de detecção de apneia do sono em tempo real e vestível com base no sensor de aceleração}
 
-Neste estudo, os autores desenvolveram um dispositivo portátil e barato para realizar o diagnóstico preliminar de apneia do sono. Desenvolveram também uma pulseira com a finalidade de alertar o paciente do evento de apneia através de um motor de vibração. A pulseira serve como uma interrupção da apneia, para que o usuário possa voltar a respirar. Com este dispositivo os autores conseguiram adquirir alguns dados de fluxo de ar, início e fim da apneia e o tempo total que o paciente ficou na cama. O dispositivo utiliza um cartão SD para armazenar os dados da apneia do sono. O paciente pode entregar este cartão SD para um médico que irá analisar estas informações e diagnosticar os problemas de sono do paciente. \cite{10.1371/journal.pone.0166262}
+Neste estudo desenvolvido por Yüzer et al. (2019), foi-se desenvolvido um dispositivo portátil e barato para realizar o diagnóstico preliminar de apneia do sono, 
+além de uma pulseira com a finalidade de alertar o paciente desse evento através de um motor de vibração. 
+A pulseira serve como uma interrupção da apneia, para que o usuário possa voltar a respirar.
 
-Para a detecção da apneia os autores utilizaram um acelerômetro posicionado sobre o diafragma do paciente. O sistema captura as variações dos sinais do acelerômetro para detectar os eventos de apneia ocorridos. A arquitetura do dispositivo pode ser visualizada na figura 5. Todos os dados adquiridos pelo dispositivo são armazenados em um cartão SD e podem ser interpretados através de uma aplicação em C# também desenvolvida pelos autores.
+O dispositivo, que utiliza um cartão SD para armazenar os dados da apneia do sono, foi essencial para a aquisição de dados de fluxo de ar, início e fim da apneia, e o tempo total que o paciente ficou na cama. 
+Este pode entregar o cartão SD para um médico, que irá analisar essas informações e diagnosticar os problemas de sono do paciente. 
+Os dados armazenados no cartão podem ser interpretados através de uma aplicação em C#, também desenvolvida pelos autores do presente trabalho.
 
-Com estes dados o estudo conseguiu obter vários parâmetros a respeito da apneia do sono como: sinal de fluxo, duração de cada apneia, posição em que o paciente está deitado, número total de ocorrências de apneia e tempo total de sono. A detecção do evento de apneia do sono utilizando-se dos dados de aceleração pode ser observada na figura 6.
+Para a identificação da apneia, os autores utilizaram um acelerômetro posicionado sobre o diafragma do paciente. 
+O sistema captura as variações dos sinais desse acelerômetro para detectar os eventos de apneia ocorridos.
 
-\subsection{Uso de bluetooth low energy em dispositivos vestíveis}
+Com estes dados, o estudo conseguiu obter vários parâmetros a respeito da apneia do sono, tais como: 
+sinal de fluxo, duração de cada apneia, posição em que o paciente está deitado, número total de ocorrências de apneia e tempo total de sono.
 
-Neste artigo os autores propõem um método alternativo para a detecção de parâmetros de sono, medindo a variação do campo magnético da Terra. Um sensor de magnetômetro é posicionado no peito do paciente através de uma cinta para detectar movimentos respiratórios durante o sono através das variações nos vetores magnéticos. O dispositivo foi projetado para ser bem pequeno, para não atrapalhar o paciente durante o sono.
-Para o desenvolvimento do dispositivo os autores utilizaram um microcontrolator ARM Cortex M0 e um módulo bluetooth low energy (BLE) nRF51822. O Sensor utilizado para detectar a movimentação da caixa torácica do paciente através da variação dos vetores magnéticos foi o LSM303DLHC da STMicroelectronics. O dispositivo vestível pode ser visualizado na figura 7. \cite{8214103}
+\subsection{Sensor sem fio baseado em magnetómetro para monitoramento da qualidade do sono}
 
-Durante uma respiração regular, o corpo move o sensor localizado no peito aproximadamente 4mm de sua posição original. A média de deslocamento da caixa torácica é detectada pelo magnetômetro que mostra uma variação significativa no vetor do campo magnético, o que permite descrever a forma de onda da respiração do paciente, como demonstra a figura 8.
+No presente trabalho, é proposto um método alternativo para a detecção de parâmetros de sono, medindo a variação do campo magnético da Terra. 
+Um sensor de magnetômetro é posicionado no peito do paciente através de uma cinta para detectar movimentos respiratórios durante o sono através das variações nos vetores magnéticos.
+Esse dispositivo foi projetado para ser pequeno, para que não atrapalhe o paciente durante o sono. \cite{8252694}
 
-O dispositivo foi desenvolvido de maneira compacta, reduzindo o incomodo do paciente durante o sono, utilizando no entanto uma bateria de pelo menos 8 horas de duração em estado de medições contínuas dos parâmetros do sono.
+Para o desenvolvimento dele, os autores utilizaram um microcontrolator ARM Cortex M0 e um módulo bluetooth low energy (BLE) nRF51822. 
+O Sensor (previamente descritono parágrafo anterior) utilizado para detectar a movimentação da caixa torácica do paciente através da variação dos vetores magnéticos foi o LSM303DLHC da STMicroelectronics.
+Durante uma respiração regular, o corpo move o sensor localizado no peito aproxima- damente 4mm de sua posição original. 
 
-\subsection{Métodos não invasivos para monitorar o sono}
+A média de deslocamento da caixa torácica é detectada pelo magnetômetro que mostra uma variação significativa no vetor do campo magnético, o que permite descrever a forma de onda da respiração do paciente.
+O aparelho foi desenvolvido de maneira compacta, reduzindo o incômodo do paciente durante o sono, utilizando no entanto uma bateria de pelo menos 8 horas de duração em estado de medições contínuas dos parâmetros do sono.
 
-Neste artigo os autores utilizaram uma série de sensores para a detecção de eventos do sono como um sensor de fluxo que coleta o ar nas vias aéreas do paciente, este preso ao peito do mesmo através de uma cinta. Utilizaram um sensor de oximetria de pulso nos dedos do paciente para a aquisição de oxigenação sanguínea e batimentos cardíacos por minuto. E por último utilizaram um colchão de células de carga para posicionado em baixo do paciente para coletar variações da distribuição do peso durante a respiração. A figura 9 pode representar o posicionamento do colchão e dos componentes do sistema. \cite{8252694}
+\subsection{Monitoramento não invasivo de sinais vitais para pacientes com apneia do sono: um estudo preliminar}
 
-Todos os dados dos sensores são enviados para um computador que então os processa, e três parâmetros podem ser extraídos dos dados crús movimento do paciente, batimentos cardíacos e respiração. Os dados dos sensores foram então correlacionados e os resultados foram satisfatórios.
+Ter um sono de qualidade é necessário para a saúde mental, o bem-estar, a qualidade de vida e a segurança de uma pessoa. 
+Os métodos atuais para o diagnósticos de transtornos do sono são métodos intrusivos, e podem afetar o sono do paciente. 
+Como resultado, há uma necessidade crucial de sistemas menos pesados para diagnosticar problemas relacionados ao sono. Neste artigo os autores desenvolveram um sistema com vários sensores para capturar parâmetros de sono. 
+Como dito anteriormente a apneia do sono é descrita como recorrentes eventos geralmente maiores que 10 segundos sem respiração. 
+Estes episódios podem ser associados com desaturação de oxigênio no sangue.
 
-\subsection{ Relação de apneia do sono e acidentes de trânsito }
+No trabalho de Sadek et al. (2018), uma série de sensores foram utilizados para a detecção de eventos do sono, tais como: 
+1) sensor de fluxo que coleta o ar nas vias aéreas do paciente, este preso ao seu peito através de uma cinta; 
+2) sensor de oximetria de pulso nos dedos do paciente para a aquisição de oxigenação sanguínea e batimentos cardíacos por minuto; e 
+3) colchão de células de carga posicionado em baixo do paciente para coletar variações da distribuição do peso durante a respiração.
 
-Nas últimas três décadas, vários estudos demonstraram uma clara relação entre sonolência excessiva diurna e acidentes de trânsito sendo a apneia obstrutiva do sono a principal causa de desta. \cite{YUZER202039}
+Todos os dados dos sensores são enviados para um computador que então os processa, e três parâmetros podem ser extraídos dos dados crús: movimento do paciente, batimentos cardíacos e respiração. 
+Os dados dos sensores foram então correlacionados e os resultados foram satisfatórios.
 
-Infelizmente motoristas profissionais sofrem com outros fatores de risco para a apneia. Isso inclui obesidade, hipertensão, tabagismo e falta de exercício físico além de idade avançada.
+\subsection{ Apneia do sono, débito de sono e sonolência diurna são associados à acidentes de trânsito }
 
-Entre os acidentes de trânsito for relatado que mais da metade dos acidentes de caminhão causa ferimentos fatais e ou deficiências crônicas e que o motorista do caminhão é considerado culpado em mais de 80\% dos casos.
+Garbarino et al. (2016) dizem que nas últimas três décadas vários estudos demonstraram uma clara relação entre sonolência excessiva diurna (SED) — ou, como os autores chamam no artigo, excessive daytime sleepiness (EDS) — e acidentes de trânsito, sendo a apneia obstrutiva do sono a principal causa médica daquela.
+Infelimente, além de caminhoneiros (que são os principais tipos de pessoas que têm que realizar longas viagens em um tempo limitado) sofrerem com a apneia, fatores como obesidade, hipertensão, tabagismo, falta de exercício físico, além de idade avançada, contribuem para a atenuar.
+Entre os acidentes de trânsito, foi relatado que mais da metade dos acidentes de cami- nhão causam ferimentos fatais e/ou deficiências crônicas e que o caminhoneiro é considerado culpado em mais de 80\% dos casos.
 
-Os autores coletaram dados por meios de exames médicos, entrevistas semiestruturadas e questionários. Durante o exame médico foram registrados características básicas como sexo, idade, peso, altura e consumo de cigarros e café.
+Tudo isso evidencia que o sono — mais especificamente, a falta dele — é um fator preponderante no quesito segurança tanto para quem exerce a profissão quanto para as pessoas ao redor, que estão envolvidas indiretamente (pedestres, outros veículos etc.).
+Os autores coletaram dados por meios de exames médicos, entrevistas semiestruturadas e questionários. Durante o exame médico, foram registradas características básicas como sexo, idade, peso, altura e consumo de cigarro e café.
 
-Um total de 949 de motoristas de caminhão realizaram o exame clínico e preencheram os questionários. Todos os sujeitos eram homens com idade média de 44,3 anos. Foi constado que aproximadamente 24,3\% dos participantes tinham um quadro de débito de sono de duas ou mais horas. Acidentes ocorridos nos últimos três anos foram relatados por mais de um terço dos participantes. Mais dados da pesquisa podem ser visualizados na figura x.
-
-Uma das principais implicações dos resultados obtidos pelo estudo foi o do papel desempenhado pelos fatores relacionados ao sono na ocorrência de acidentes de trânsito. Ao contrário de outros fatores de risco como o álcool e drogas. Ficar com sono não é contra a lei e não é investigado pelo corpo de trânsito em bloqueios rotineiros.
+Um total de 949 motoristas de caminhão realizaram o exame clínico e preencheram os questionários; todos os sujeitos eram homens com idade média de 44,3 anos; foi constado que aproximadamente 24,3\% dos participantes tinham um quadro de débito de sono de duas ou mais horas; acidentes ocorridos nos últimos três anos foram relatados por mais de um terço dos participantes.
+Uma das coisas que mais chama atenção nos resultados obtidos pelo estudo foi o do papel desempenhado pelos fatores relacionados ao sono na ocorrência de acidentes de trânsito, em detrimento de outros fatores de risco como o álcool e drogas.
