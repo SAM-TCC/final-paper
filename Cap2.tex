@@ -2,38 +2,13 @@
 
 \section{Fundamentação teórica}
 
-\subsection{Apneia do sono}
-
-
-
-\subsection{Sensor de fluxo de ar}
-
-Existem várias tecnologias disponíveis para a medição do fluxo de ar, porém os princípios mais utilizados para este tipo de medição é por diferencial de temperatura ou por deslocamento mecânico. Os sensores baseados em diferencial de temperatura medem a queda de temperatura sofrida pela ação do fluxo de ar, alguns exemplos de implementação podem ser observados na Figura 2. Já os sensores mecânicos trabalham com ventoinhas ou comportas atreladas a potenciômetros que se movem de acordo com a intensidade do fluxo de ar. (IDA, 2020)
-
-\begin{figure}[H]
-  \caption{Exemplos de implementação de sensores de fluxo de ar por diferença térmica}
-  \includegraphics[width=\textwidth]{figuras/airflow.PNG}
-  \floatfoot{(a) demonstra um sensor exposto ao fluxo de ar e outro escondido, (b) demonstra dois sensores no mesmo fluxo, mas o segundo fica protegido pelo primeiro que já aqueceu o fluxo de ar anteriormente, (c) demonstra uma implementação de um sensor com quatro termístores. (IDA, 2020}
-\end{figure}
-
-\subsection{Oxímetro}
-
-O oxímetro é um sensor óptico que mede a oxigenação sanguínea comparando a taxa de absorção de ondas eletromagnéticas de diferentes frequências. Esta relação foi descrita pela primeira vez por Johann Heinrich Lambert em 1760 e pode ser observada na Figura 3. (MOYLE, 2002)
-
-O oxímetro emite ondas eletromagnéticas com diversas frequências dentro do espectro de aproximadamente 400 a 1000nm de comprimento de onda, estas ondas são normalmente aplicadas nas pontas dos dedos, pulso ou ouvido. As células sanguíneas atingidas absorvem este espectro de acordo com a sua taxa de oxigenação devolvendo ao sensor óptico o restante. Ao analisar este sinal que retorna ao dispositivo é possível inferir o nível de oxigenação sanguínea. (MOYLE, 2002)
-
-\begin{figure}[H]
-  \caption{Espectro de absorção de sangue oxigenado (HbO2) e deoxigenado (Hb)}
-  \includegraphics[width=\textwidth]{figuras/Oximetria.PNG}
-\end{figure}
-
 \pagebreak
 
 \section{Trabalhos correlatos}
 
 \subsection{Um novo sistema de detecção de apneia do sono em tempo real e vestível com base no sensor de aceleração}
 
-Neste estudo desenvolvido por Yüzer et al. (2019), foi-se desenvolvido um dispositivo portátil e barato para realizar o diagnóstico preliminar de apneia do sono, 
+Neste estudo desenvolvido por \citeauthor{YUZER202039}, \citeyear{YUZER202039}, foi-se desenvolvido um dispositivo portátil e barato para realizar o diagnóstico preliminar de apneia do sono, 
 além de uma pulseira com a finalidade de alertar o paciente desse evento através de um motor de vibração. 
 A pulseira serve como uma interrupção da apneia, para que o usuário possa voltar a respirar.
 
@@ -68,7 +43,7 @@ Como resultado, há uma necessidade crucial de sistemas menos pesados para diagn
 Como dito anteriormente a apneia do sono é descrita como recorrentes eventos geralmente maiores que 10 segundos sem respiração. 
 Estes episódios podem ser associados com desaturação de oxigênio no sangue.
 
-No trabalho de Sadek et al. (2018), uma série de sensores foram utilizados para a detecção de eventos do sono, tais como: 
+No trabalho de \cite{8214103}, uma série de sensores foram utilizados para a detecção de eventos do sono, tais como: 
 1) sensor de fluxo que coleta o ar nas vias aéreas do paciente, este preso ao seu peito através de uma cinta; 
 2) sensor de oximetria de pulso nos dedos do paciente para a aquisição de oxigenação sanguínea e batimentos cardíacos por minuto; e 
 3) colchão de células de carga posicionado em baixo do paciente para coletar variações da distribuição do peso durante a respiração.
@@ -78,7 +53,7 @@ Os dados dos sensores foram então correlacionados e os resultados foram satisfa
 
 \subsection{ Apneia do sono, débito de sono e sonolência diurna são associados à acidentes de trânsito }
 
-Garbarino et al. (2016) dizem que nas últimas três décadas vários estudos demonstraram uma clara relação entre sonolência excessiva diurna (SED) — ou, como os autores chamam no artigo, excessive daytime sleepiness (EDS) — e acidentes de trânsito, sendo a apneia obstrutiva do sono a principal causa médica daquela.
+\cite{101371} dizem que nas últimas três décadas vários estudos demonstraram uma clara relação entre sonolência excessiva diurna (SED) — ou, como os autores chamam no artigo, excessive daytime sleepiness (EDS) — e acidentes de trânsito, sendo a apneia obstrutiva do sono a principal causa médica daquela.
 Infelimente, além de caminhoneiros (que são os principais tipos de pessoas que têm que realizar longas viagens em um tempo limitado) sofrerem com a apneia, fatores como obesidade, hipertensão, tabagismo, falta de exercício físico, além de idade avançada, contribuem para a atenuar.
 Entre os acidentes de trânsito, foi relatado que mais da metade dos acidentes de cami- nhão causam ferimentos fatais e/ou deficiências crônicas e que o caminhoneiro é considerado culpado em mais de 80\% dos casos.
 
